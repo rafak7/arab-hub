@@ -162,6 +162,41 @@ export default function CompanyProfilePage() {
           </div>
         </div>
         
+        {/* Stats for mobile view (shown first on mobile) */}
+        <div className={styles.mobileStatsSection}>
+          <div className={styles.statsCard}>
+            <h3 className={styles.statsTitle}>Estatísticas de Match</h3>
+            
+            <div className={styles.statsContent}>
+              <div className={styles.statItem}>
+                <div className={styles.statIcon}>
+                  <BarChart2 size={20} />
+                </div>
+                <div className={styles.statInfo}>
+                  <span className={styles.statValue}>3</span>
+                  <span className={styles.statLabel}>Empresas Compatíveis</span>
+                </div>
+              </div>
+              
+              <div className={styles.statItem}>
+                <div className={styles.statIcon}>
+                  <Users size={20} />
+                </div>
+                <div className={styles.statInfo}>
+                  <span className={styles.statValue}>0</span>
+                  <span className={styles.statLabel}>Conexões</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.actionArea}>
+              <Link href="/match" className={styles.matchButton}>
+                Encontrar Parceiros
+              </Link>
+            </div>
+          </div>
+        </div>
+        
         <div className={styles.contentWrapper}>
           <div className={styles.mainContent}>
             <div className={styles.section}>
@@ -208,6 +243,7 @@ export default function CompanyProfilePage() {
             )}
           </div>
           
+          {/* Desktop sidebar (hidden on mobile) */}
           <div className={styles.sidebar}>
             <div className={styles.statsCard}>
               <h3 className={styles.statsTitle}>Estatísticas de Match</h3>

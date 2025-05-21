@@ -57,6 +57,14 @@ const Layout = ({ children }: LayoutProps) => {
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Impedir rolagem do body quando menu estiver aberto
+    document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : 'auto';
+  };
+  
+  // Adicionar função para fechar o menu mobile quando clicar em um link
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = 'auto';
   };
   
   const toggleUserDropdown = () => {
@@ -101,6 +109,13 @@ const Layout = ({ children }: LayoutProps) => {
   };
   
   const isLoginPage = router.pathname === '/login' || router.pathname === '/register' || router.pathname === '/company-register';
+  
+  useEffect(() => {
+    // Limpar o overflow do body quando o componente for desmontado
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
   
   if (isLoginPage) {
     return (
@@ -194,6 +209,11 @@ const Layout = ({ children }: LayoutProps) => {
                       <PlusCircle size={16} /> {t('navigation.registerCompany')}
                     </Link>
                   )}
+                  {hasCompany && (
+                    <Link href="/company-profile" className={styles.menuItem}>
+                      <Building size={16} /> {t('dashboard.myCompany')}
+                    </Link>
+                  )}
                   <Link href="/settings" className={styles.menuItem}>
                     <Settings size={16} /> {t('navigation.settings')}
                   </Link>
@@ -203,79 +223,106 @@ const Layout = ({ children }: LayoutProps) => {
                 </div>
               </div>
               
-              <button className={styles.mobileMenuButton} onClick={toggleMobileMenu}>
+              <button 
+                className={styles.mobileMenuButton} 
+                onClick={toggleMobileMenu}
+                aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+              >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
             
-            <div className={classNames(styles.mobileMenu, {
-              [styles.open]: isMobileMenuOpen,
-            })}>
-              <ul className={styles.menuItems}>
-                <li>
-                  <Link 
-                    href="/dashboard" 
-                    className={styles.menuItem}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('navigation.dashboard')}
-                  </Link>
-                </li>
-                {hasCompany && (
+            {/* Overlay do menu mobile */}
+            <div 
+              className={classNames(styles.mobileMenuOverlay, {
+                [styles.open]: isMobileMenuOpen,
+              })} 
+              onClick={closeMobileMenu}
+            ></div>
+          
+            {/* Menu mobile */}
+            {isMobileMenuOpen && (
+              <div className={classNames(styles.mobileMenu, {
+                [styles.open]: isMobileMenuOpen,
+              })}>
+                <ul className={styles.menuItems}>
                   <li>
                     <Link 
-                      href="/match" 
+                      href="/dashboard" 
                       className={styles.menuItem}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={closeMobileMenu}
                     >
-                      {t('navigation.match')}
+                      {t('navigation.dashboard')}
                     </Link>
                   </li>
-                )}
-                {!hasCompany && (
+                  {hasCompany && (
+                    <>
+                      <li>
+                        <Link 
+                          href="/company-profile" 
+                          className={`${styles.menuItem} ${styles.highlightMobileMenuItem}`}
+                          onClick={closeMobileMenu}
+                        >
+                          <Building size={16} />
+                          <span>{t('dashboard.myCompany')}</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/match" 
+                          className={styles.menuItem}
+                          onClick={closeMobileMenu}
+                        >
+                          {t('navigation.match')}
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  {!hasCompany && (
+                    <li>
+                      <Link 
+                        href="/company-register" 
+                        className={`${styles.menuItem} ${styles.highlightMobileMenuItem}`}
+                        onClick={closeMobileMenu}
+                      >
+                        <PlusCircle size={16} /> 
+                        <span>{t('navigation.registerCompany')}</span>
+                        <span className={styles.importantBadge}>{t('navigation.important')}</span>
+                      </Link>
+                    </li>
+                  )}
                   <li>
                     <Link 
-                      href="/company-register" 
-                      className={`${styles.menuItem} ${styles.highlightMobileMenuItem}`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="/profile" 
+                      className={styles.menuItem}
+                      onClick={closeMobileMenu}
                     >
-                      <PlusCircle size={16} /> 
-                      <span>{t('navigation.registerCompany')}</span>
-                      <span className={styles.importantBadge}>{t('navigation.important')}</span>
+                      {t('navigation.profile')}
                     </Link>
                   </li>
-                )}
-                <li>
-                  <Link 
-                    href="/profile" 
-                    className={styles.menuItem}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('navigation.profile')}
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/settings" 
-                    className={styles.menuItem}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {t('navigation.settings')}
-                  </Link>
-                </li>
-                <li>
-                  <button 
-                    className={`${styles.menuItem} ${styles.logout}`}
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      handleLogout();
-                    }}
-                  >
-                    {t('navigation.logout')}
-                  </button>
-                </li>
-              </ul>
-            </div>
+                  <li>
+                    <Link 
+                      href="/settings" 
+                      className={styles.menuItem}
+                      onClick={closeMobileMenu}
+                    >
+                      {t('navigation.settings')}
+                    </Link>
+                  </li>
+                  <li>
+                    <button 
+                      className={`${styles.menuItem} ${styles.logout}`}
+                      onClick={() => {
+                        closeMobileMenu();
+                        handleLogout();
+                      }}
+                    >
+                      {t('navigation.logout')}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
           </nav>
         </div>
       </header>

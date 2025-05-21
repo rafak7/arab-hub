@@ -223,10 +223,17 @@ const Dashboard = () => {
                     </div>
                   </div>
                   
-                  <Link href="/company-edit" className={styles.editProfileButton}>
-                    <Edit size={14} />
-                    <span>{t('dashboard.editProfile')}</span>
-                  </Link>
+                  <div className={styles.companyActions}>
+                    <Link href="/company-edit" className={styles.editProfileButton}>
+                      <Edit size={14} />
+                      <span>{t('dashboard.editProfile')}</span>
+                    </Link>
+                    
+                    <Link href="/company-profile" className={`${styles.viewProfileButton} ${styles.mobileOnly}`}>
+                      <ExternalLink size={14} />
+                      <span>{t('dashboard.viewFullProfile')}</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               

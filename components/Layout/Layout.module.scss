@@ -13,13 +13,14 @@
   box-shadow: $shadow-sm;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   
   .logo {
     display: flex;
@@ -63,6 +64,8 @@
     border: none;
     color: $text-dark;
     cursor: pointer;
+    padding: $spacing-sm;
+    z-index: 1010;
     
     @media (max-width: $tablet) {
       display: block;
@@ -73,31 +76,42 @@
     display: none;
     
     @media (max-width: $tablet) {
-      display: block;
+      display: none;
       position: fixed;
       top: 60px;
       right: 0;
       left: 0;
+      bottom: 0;
       background-color: $background-light;
       padding: $spacing-lg;
       box-shadow: $shadow-md;
-      z-index: 100;
-      transform: translateY(-100%);
-      opacity: 0;
-      transition: transform $transition-normal, opacity $transition-normal;
+      z-index: 1000;
+      overflow-y: auto;
       
       &.open {
-        transform: translateY(0);
-        opacity: 1;
+        display: block;
       }
       
       .menuItems {
+        display: flex;
         flex-direction: column;
         gap: $spacing-md;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        li {
+          margin: 0;
+          padding: 0;
+        }
         
         .menuItem {
+          display: flex;
+          width: 100%;
           padding: $spacing-md;
           border-bottom: 1px solid $background-dark;
+          align-items: center;
+          gap: 10px;
           
           &:last-child {
             border-bottom: none;
@@ -394,14 +408,30 @@
     justify-content: center;
     gap: 1rem;
     
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      padding: 0.5rem 0;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    
     svg {
       color: $primary;
+      
+      @media (max-width: $mobile) {
+        flex-shrink: 0;
+      }
     }
     
     p {
       margin: 0;
       color: $text-dark;
       font-weight: 500;
+      
+      @media (max-width: $mobile) {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
     }
     
     .bannerButton {
@@ -411,6 +441,12 @@
       border-radius: 4px;
       font-size: 0.9rem;
       font-weight: 600;
+      
+      @media (max-width: $mobile) {
+        width: 90%;
+        text-align: center;
+        padding: 0.5rem;
+      }
       
       &:hover {
         background-color: darken($primary, 10%);
@@ -431,6 +467,25 @@
       &:hover {
         background-color: rgba($primary, 0.1);
       }
+    }
+  }
+}
+
+.mobileMenuOverlay {
+  display: none;
+  
+  @media (max-width: $tablet) {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    
+    &.open {
+      display: block;
     }
   }
 }

@@ -13,6 +13,12 @@
   .heading {
     margin-bottom: 0;
   }
+  
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+  }
 }
 
 .stats {
@@ -20,6 +26,15 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: $spacing-lg;
   margin-bottom: $spacing-xl;
+  
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-md;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
   
   .statCard {
     padding: $spacing-lg;
@@ -30,6 +45,10 @@
     
     &:hover {
       transform: translateY(-5px);
+    }
+    
+    @media (max-width: $mobile) {
+      padding: $spacing-md;
     }
     
     .statTitle {
@@ -299,6 +318,10 @@
     transform: translateY(-3px);
     box-shadow: $shadow-lg;
   }
+  
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+  }
 }
 
 .myCompanyHeader {
@@ -311,12 +334,19 @@
   @media (max-width: $mobile) {
     flex-direction: column;
     text-align: center;
+    gap: $spacing-md;
+    padding-bottom: $spacing-md;
   }
   
   .logoContainer {
     flex-shrink: 0;
     width: 80px;
     height: 80px;
+    
+    @media (max-width: $mobile) {
+      width: 70px;
+      height: 70px;
+    }
     
     .companyLogo {
       width: 100%;
@@ -340,10 +370,18 @@
     flex: 1;
     position: relative;
     
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+    
     .companyName {
       font-size: 1.5rem;
       margin: 0 0 $spacing-sm;
       color: $text-dark;
+      
+      @media (max-width: $mobile) {
+        font-size: 1.3rem;
+      }
     }
     
     .companyMeta {
@@ -368,7 +406,18 @@
       }
     }
     
-    .editProfileButton {
+    .companyActions {
+      display: flex;
+      gap: $spacing-md;
+      
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: $spacing-sm;
+        width: 100%;
+      }
+    }
+    
+    .editProfileButton, .viewProfileButton {
       display: inline-flex;
       align-items: center;
       gap: $spacing-xs;
@@ -386,6 +435,19 @@
       
       @media (max-width: $mobile) {
         margin-top: $spacing-sm;
+        padding: $spacing-xs $spacing-md;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    .viewProfileButton {
+      background-color: $primary;
+      color: white;
+      
+      &:hover {
+        background-color: darken($primary, 10%);
+        color: white;
       }
     }
   }
@@ -397,9 +459,19 @@
   flex-wrap: wrap;
   gap: $spacing-xl;
   
+  @media (max-width: $mobile) {
+    padding-top: $spacing-md;
+    gap: $spacing-lg;
+    flex-direction: column;
+  }
+  
   .detailSection {
     flex: 1;
     min-width: 200px;
+    
+    @media (max-width: $mobile) {
+      min-width: 100%;
+    }
     
     .detailTitle {
       font-size: 1rem;
@@ -414,6 +486,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-sm;
+  
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
   
   .sectorTag {
     background-color: rgba($primary, 0.1);
@@ -437,6 +513,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-sm;
+  
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
   
   .certBadge {
     padding: $spacing-xs $spacing-sm;
@@ -465,5 +545,53 @@
     font-size: 0.85rem;
     color: $text-medium;
     background-color: $background-light;
+  }
+}
+
+.mobileOnly {
+  display: none !important;
+  
+  @media (max-width: $mobile) {
+    display: flex !important;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+  
+  @media (max-width: $mobile) {
+    margin-bottom: $spacing-md;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .viewAllLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #0070f3;
+    text-decoration: none;
+    
+    @media (max-width: $mobile) {
+      display: none;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

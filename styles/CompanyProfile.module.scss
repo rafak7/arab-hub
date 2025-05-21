@@ -5,6 +5,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: $spacing-lg 0;
+  
+  @media (max-width: $mobile) {
+    padding: $spacing-md $spacing-sm;
+  }
 }
 
 .loadingContainer {
@@ -41,6 +45,11 @@
   padding: $spacing-lg;
   margin-bottom: $spacing-lg;
   
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+  
   .headerContent {
     display: flex;
     align-items: center;
@@ -49,6 +58,7 @@
     @media (max-width: $mobile) {
       flex-direction: column;
       text-align: center;
+      gap: $spacing-md;
     }
   }
   
@@ -56,6 +66,11 @@
     flex-shrink: 0;
     width: 120px;
     height: 120px;
+    
+    @media (max-width: $mobile) {
+      width: 100px;
+      height: 100px;
+    }
     
     .companyLogo {
       width: 100%;
@@ -85,7 +100,8 @@
       color: $text-dark;
       
       @media (max-width: $mobile) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        margin-bottom: $spacing-xs;
       }
     }
     
@@ -134,8 +150,27 @@
         position: static;
         margin: $spacing-md auto 0;
         display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        padding: $spacing-sm $spacing-md;
       }
     }
+  }
+}
+
+.mobileStatsSection {
+  display: none;
+  margin-bottom: $spacing-md;
+  
+  @media (max-width: $tablet) {
+    display: block;
+  }
+  
+  .statsCard {
+    background-color: white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+    padding: $spacing-md;
   }
 }
 
@@ -155,7 +190,7 @@
     width: 300px;
     
     @media (max-width: $tablet) {
-      width: 100%;
+      display: none;
     }
   }
 }
@@ -166,6 +201,11 @@
   box-shadow: $shadow-md;
   padding: $spacing-lg;
   margin-bottom: $spacing-lg;
+  
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
   
   .sectionTitle {
     display: flex;
@@ -195,6 +235,10 @@
   flex-wrap: wrap;
   gap: $spacing-sm;
   
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
+  
   .sectorTag {
     background-color: rgba($primary, 0.1);
     color: $primary;
@@ -202,6 +246,11 @@
     border-radius: $border-radius-md;
     font-size: 0.9rem;
     font-weight: $font-weight-medium;
+    
+    @media (max-width: $mobile) {
+      padding: $spacing-xs $spacing-sm;
+      font-size: 0.85rem;
+    }
   }
 }
 
@@ -209,6 +258,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-sm;
+  
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
   
   .certBadge {
     padding: $spacing-sm $spacing-md;
@@ -237,6 +290,10 @@
   border-radius: $border-radius-lg;
   box-shadow: $shadow-md;
   padding: $spacing-lg;
+  
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+  }
   
   .statsTitle {
     font-size: 1.1rem;
@@ -301,6 +358,12 @@
       border-radius: $border-radius-md;
       font-weight: $font-weight-medium;
       transition: all $transition-fast;
+      
+      @media (max-width: $mobile) {
+        display: block;
+        width: 100%;
+        padding: $spacing-md;
+      }
       
       &:hover {
         background-color: darken($primary, 10%);
