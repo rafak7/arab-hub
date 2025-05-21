@@ -1,0 +1,128 @@
+@import 'variables.scss';
+
+.container {
+  width: 100%;
+  padding: $spacing-lg 0;
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: $spacing-xl;
+  
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.infoSection {
+  flex: 1;
+  padding: $spacing-xl;
+  background-color: $background-light;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  
+  .infoHeader {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+    
+    .headerIcon {
+      color: $primary;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+      color: $text-dark;
+      margin: 0;
+    }
+  }
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  
+  .benefitItem {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+    
+    .benefitIcon {
+      color: $primary;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+    
+    .benefitText {
+      h3 {
+        font-size: 1.25rem;
+        margin: 0 0 $spacing-sm;
+        color: $text-dark;
+      }
+      
+      p {
+        font-size: 1rem;
+        color: $text-medium;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.testimonialsSection {
+  margin-bottom: $spacing-xl;
+  
+  .testimonial {
+    position: relative;
+    font-style: italic;
+    padding: $spacing-md $spacing-lg;
+    background-color: rgba($primary, 0.05);
+    border-left: 4px solid $primary;
+    margin: 0;
+    color: $text-dark;
+    line-height: 1.6;
+    
+    &::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 3rem;
+      color: rgba($primary, 0.2);
+      font-family: serif;
+    }
+    
+    footer {
+      margin-top: $spacing-md;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: $text-medium;
+    }
+  }
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  
+  .partnershipImage {
+    border-radius: $border-radius-md;
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.formSection {
+  flex: 1;
+  
+  @media (max-width: $tablet) {
+    order: -1;
+  }
+} 

@@ -1,0 +1,436 @@
+@import '../../styles/variables.scss';
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: $background-light;
+  border-bottom: 1px solid $background-dark;
+  padding: $spacing-md 0;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-weight: $font-weight-bold;
+    font-size: 1.25rem;
+    color: $primary;
+    
+    .logoIcon {
+      color: $primary;
+    }
+  }
+  
+  .menuItems {
+    display: flex;
+    gap: $spacing-lg;
+    
+    .menuItem {
+      display: block;
+      padding: $spacing-sm;
+      color: $text-medium;
+      font-weight: $font-weight-medium;
+      transition: color $transition-fast;
+      
+      &:hover, &.active {
+        color: $primary;
+      }
+    }
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+  
+  .mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: $text-dark;
+    cursor: pointer;
+    
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+  
+  .mobileMenu {
+    display: none;
+    
+    @media (max-width: $tablet) {
+      display: block;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      left: 0;
+      background-color: $background-light;
+      padding: $spacing-lg;
+      box-shadow: $shadow-md;
+      z-index: 100;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform $transition-normal, opacity $transition-normal;
+      
+      &.open {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      
+      .menuItems {
+        flex-direction: column;
+        gap: $spacing-md;
+        
+        .menuItem {
+          padding: $spacing-md;
+          border-bottom: 1px solid $background-dark;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: $tablet) {
+    .menuItems {
+      display: none;
+    }
+  }
+}
+
+.main {
+  flex: 1;
+  padding: $spacing-xl 0;
+}
+
+.footer {
+  background-color: $background-light;
+  border-top: 1px solid $background-dark;
+  padding: $spacing-xl 0;
+  
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  .footerLogo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-weight: $font-weight-bold;
+    color: $primary;
+  }
+  
+  .footerNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    
+    .footerLink {
+      color: $text-medium;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  
+  .footerCopyright {
+    color: $text-medium;
+    font-size: 0.875rem;
+  }
+}
+
+.userDropdown {
+  position: relative;
+  
+  .userButton {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-sm;
+    border-radius: $border-radius-md;
+    transition: background-color $transition-fast;
+    
+    &:hover {
+      background-color: $background-medium;
+    }
+    
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $primary;
+      color: $text-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: $font-weight-bold;
+    }
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: $z-index-dropdown;
+    min-width: 200px;
+    background-color: $background-light;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all $transition-fast;
+    
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .rtl & {
+      right: auto;
+      left: 0;
+    }
+  }
+  
+  .menuItem {
+    display: block;
+    width: 100%;
+    padding: $spacing-md;
+    text-align: left;
+    border: none;
+    background: none;
+    color: $text-dark;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+    
+    &:hover {
+      background-color: $background-medium;
+    }
+    
+    &.logout {
+      border-top: 1px solid $background-dark;
+      color: $error;
+    }
+    
+    .rtl & {
+      text-align: right;
+    }
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: $text-medium;
+  text-decoration: none;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  
+  &:hover {
+    background-color: $background-light;
+    color: $text-dark;
+  }
+  
+  &.active {
+    color: $primary;
+    background-color: rgba($primary, 0.1);
+  }
+  
+  &.logout {
+    color: $error;
+    
+    &:hover {
+      background-color: rgba($error, 0.1);
+    }
+  }
+  
+  &.registerCompanyButton {
+    color: white;
+    background-color: $primary;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      background-color: darken($primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    &.pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba($primary, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba($primary, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba($primary, 0);
+      }
+    }
+  }
+}
+
+.highlightMenuItem {
+  color: $primary !important;
+  background-color: rgba($primary, 0.1);
+  font-weight: 600;
+  
+  &:hover {
+    background-color: rgba($primary, 0.2);
+  }
+}
+
+.highlightMobileMenuItem {
+  color: $primary !important;
+  background-color: rgba($primary, 0.1);
+  position: relative;
+  border-left: 3px solid $primary;
+  padding-left: 1rem;
+  
+  .importantBadge {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    background-color: $primary;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+  }
+}
+
+.registerCompanyContainer {
+  position: relative;
+}
+
+.companyTooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 1rem;
+  z-index: 10;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    transform: rotate(45deg);
+  }
+  
+  svg {
+    color: $primary;
+    flex-shrink: 0;
+  }
+  
+  span {
+    font-size: 0.85rem;
+    color: $text-dark;
+  }
+}
+
+.registerCompanyBanner {
+  background-color: rgba($primary, 0.1);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba($primary, 0.2);
+  
+  .bannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+    svg {
+      color: $primary;
+    }
+    
+    p {
+      margin: 0;
+      color: $text-dark;
+      font-weight: 500;
+    }
+    
+    .bannerButton {
+      background-color: $primary;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+}
+
+.mobileMenu {
+  .menuItem {
+    &.highlight {
+      color: $primary;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: $font-weight-medium;
+      
+      &:hover {
+        background-color: rgba($primary, 0.1);
+      }
+    }
+  }
+}

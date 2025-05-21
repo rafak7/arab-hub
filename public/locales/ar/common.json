@@ -1,0 +1,138 @@
+{
+  "login": {
+    "title": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "registerLink": "ليس لديك حساب؟ سجل الآن",
+    "forgotPassword": "نسيت كلمة المرور؟"
+  },
+  "register": {
+    "title": "التسجيل",
+    "name": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "submit": "تسجيل",
+    "loginLink": "لديك حساب بالفعل؟ تسجيل الدخول"
+  },
+  "companyRegister": {
+    "title": "تسجيل الشركة",
+    "companyName": "اسم الشركة",
+    "country": "البلد",
+    "type": "نوع الشركة",
+    "importer": "مستورد",
+    "exporter": "مصدر",
+    "both": "كلاهما",
+    "sectors": "قطاعات الأعمال",
+    "certifications": "الشهادات",
+    "halal": "حلال",
+    "iso": "آيزو",
+    "other": "أخرى",
+    "submit": "إكمال التسجيل"
+  },
+  "match": {
+    "title": "التوفيق بين الشركات",
+    "filter": "تصفية",
+    "country": "البلد",
+    "sector": "القطاع",
+    "type": "النوع",
+    "connect": "تواصل",
+    "viewProfile": "عرض الملف الشخصي",
+    "noMatches": "لم يتم العثور على شركات",
+    "needCompany": "تحتاج إلى تسجيل شركتك لرؤية التطابقات",
+    "registerToFind": "سجل شركتك للعثور على شركاء أعمال متوافقين",
+    "registerCompany": "تسجيل الشركة",
+    "infoTooltip": "معلومات حول حساب التطابق",
+    "howWeCalculate": "كيف نحسب درجة التطابق؟",
+    "factorsDescription": "يتم حساب درجة التطابق مع مراعاة عدة عوامل:",
+    "factors": {
+      "typeCompatibility": "توافق النوع (30٪):",
+      "typeDescription": "يتم مطابقة المصدرين مع المستوردين",
+      "sectorMatch": "القطاعات المشتركة (25٪):",
+      "sectorDescription": "الشركات في نفس القطاع لديها توافق أعلى",
+      "certifications": "الشهادات المشتركة (15٪):",
+      "certificationsDescription": "الشهادات المتوافقة تزيد من الدرجة",
+      "geography": "الجغرافيا (20٪):",
+      "geographyDescription": "يتم إعطاء الأولوية للروابط بين البرازيل والعالم العربي",
+      "specialCombinations": "مجموعات خاصة (10٪):",
+      "specialDescription": "بعض التطابقات المحددة تحصل على نقاط إضافية"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "connections": "الاتصالات",
+    "views": "مشاهدات الملف الشخصي",
+    "suggestions": "اقتراحات",
+    "viewAll": "عرض الكل",
+    "registerCompany": "سجل شركتك",
+    "registerCompanyDescription": "للعثور على شركاء الأعمال وتلقي اقتراحات المطابقة، تحتاج إلى تسجيل شركتك أولاً.",
+    "registerCompanyButton": "تسجيل الشركة",
+    "welcomeMessage": "مرحبًا بك في منصة الأعمال العربية البرازيلية. ابحث عن شركاء الأعمال واستكشف الروابط بين الشركات من البرازيل والعالم العربي.",
+    "myCompany": "شركتي",
+    "viewFullProfile": "عرض الملف الكامل",
+    "noConnectionsYet": "لا توجد اتصالات حتى الآن",
+    "noSuggestionsAvailable": "لا توجد اقتراحات متاحة",
+    "suggestionsExplanation": "اقتراحات بناءً على ملف شركتك وخوارزمية المطابقة الذكية",
+    "sector": "القطاع",
+    "halalCertification": "شهادة الحلال",
+    "certification": "شهادة",
+    "businessOpportunity": "فرصة عمل",
+    "editProfile": "تعديل الملف الشخصي",
+    "sectorsTitle": "قطاعات الأعمال",
+    "certificationsTitle": "الشهادات الرئيسية",
+    "companyLogoAlt": "شعار {{name}}"
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "match": "التوفيق",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "registerCompany": "تسجيل الشركة",
+    "registerCompanyTooltip": "سجل شركتك للوصول إلى جميع الميزات",
+    "important": "مهم",
+    "registerCompanyBannerText": "للعثور على شركاء الأعمال، تحتاج إلى تسجيل شركتك",
+    "registerNow": "سجل الآن"
+  },
+  "language": {
+    "pt": "البرتغالية",
+    "en": "الإنجليزية",
+    "ar": "العربية"
+  },
+  "sectors": {
+    "agriculture": "الزراعة",
+    "food": "الأغذية والمشروبات",
+    "textile": "النسيج",
+    "technology": "التكنولوجيا",
+    "construction": "البناء",
+    "manufacturing": "التصنيع",
+    "healthcare": "الرعاية الصحية",
+    "energy": "الطاقة",
+    "tourism": "السياحة"
+  },
+  "countries": {
+    "BR": "البرازيل",
+    "SA": "المملكة العربية السعودية",
+    "AE": "الإمارات العربية المتحدة",
+    "QA": "قطر",
+    "KW": "الكويت",
+    "BH": "البحرين",
+    "OM": "عمان",
+    "EG": "مصر",
+    "JO": "الأردن",
+    "LB": "لبنان"
+  },
+  "common": {
+    "close": "إغلاق",
+    "loading": "جار التحميل...",
+    "more": "المزيد"
+  },
+  "footer": {
+    "about": "حول",
+    "contact": "اتصل بنا",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "rights": "جميع الحقوق محفوظة."
+  }
+}

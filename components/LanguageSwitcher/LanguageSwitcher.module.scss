@@ -1,0 +1,96 @@
+@import '../../styles/variables.scss';
+
+.languageSwitcher {
+  position: relative;
+  display: inline-block;
+}
+
+.switcherButton {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  background-color: transparent;
+  border: 1px solid $primary;
+  border-radius: $border-radius-md;
+  color: $primary;
+  cursor: pointer;
+  transition: all $transition-fast;
+  
+  &:hover {
+    background-color: rgba($primary, 0.1);
+  }
+  
+  .icon {
+    margin-left: $spacing-sm;
+    
+    .rtl & {
+      margin-left: 0;
+      margin-right: $spacing-sm;
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  z-index: $z-index-dropdown;
+  min-width: 150px;
+  margin-top: $spacing-sm;
+  background-color: $background-light;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: all $transition-fast;
+  
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  .rtl & {
+    right: auto;
+    left: 0;
+  }
+}
+
+.languageOption {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: $spacing-md;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+  
+  &:hover {
+    background-color: $background-medium;
+  }
+  
+  &.active {
+    background-color: rgba($primary, 0.1);
+    font-weight: $font-weight-medium;
+  }
+  
+  .flag {
+    margin-right: $spacing-sm;
+    width: 20px;
+    height: 20px;
+    
+    .rtl & {
+      margin-right: 0;
+      margin-left: $spacing-sm;
+    }
+  }
+  
+  .rtl & {
+    text-align: right;
+  }
+}

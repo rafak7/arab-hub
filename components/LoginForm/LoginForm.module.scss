@@ -1,0 +1,104 @@
+@import '../../styles/variables.scss';
+
+.loginForm {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: $spacing-sm;
+    color: $primary;
+  }
+  
+  .logo {
+    margin-bottom: $spacing-md;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+    border-radius: 50%;
+    color: $text-light;
+  }
+}
+
+.formBody {
+  .formGroup {
+    margin-bottom: $spacing-lg;
+  }
+  
+  .input {
+    width: 100%;
+    padding: $spacing-md;
+    border: 1px solid $background-dark;
+    border-radius: $border-radius-md;
+    transition: border-color $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+  
+  .error {
+    color: $error;
+    font-size: 0.875rem;
+    margin-top: $spacing-xs;
+  }
+}
+
+.formFooter {
+  .submitButton {
+    width: 100%;
+    padding: $spacing-md;
+    background-color: $primary;
+    color: $text-light;
+    border: none;
+    border-radius: $border-radius-md;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+    
+    &:hover {
+      background-color: $primary-light;
+    }
+    
+    &:disabled {
+      background-color: $background-dark;
+      cursor: not-allowed;
+    }
+  }
+  
+  .forgotPassword {
+    display: block;
+    text-align: center;
+    margin-top: $spacing-md;
+    color: $text-medium;
+    font-size: 0.875rem;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+  
+  .registerLink {
+    display: block;
+    text-align: center;
+    margin-top: $spacing-xl;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.languageSwitcherContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-xl;
+}

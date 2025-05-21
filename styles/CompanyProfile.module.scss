@@ -1,0 +1,312 @@
+@import 'variables.scss';
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  
+  .loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba($primary, 0.1);
+    border-radius: 50%;
+    border-top-color: $primary;
+    animation: spin 1s linear infinite;
+    margin-bottom: $spacing-md;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  p {
+    color: $text-medium;
+    font-size: 1rem;
+  }
+}
+
+.header {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  
+  .headerContent {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  .logoContainer {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    
+    .companyLogo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .logoPlaceholder {
+      width: 100%;
+      height: 100%;
+      background-color: $background-light;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-medium;
+    }
+  }
+  
+  .companyInfo {
+    flex: 1;
+    position: relative;
+    
+    .companyName {
+      font-size: 2rem;
+      margin: 0 0 $spacing-sm;
+      color: $text-dark;
+      
+      @media (max-width: $mobile) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .companyMeta {
+      display: flex;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+      
+      @media (max-width: $mobile) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .metaItem {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        color: $text-medium;
+        
+        svg {
+          color: $primary;
+        }
+      }
+    }
+    
+    .editButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      padding: $spacing-sm $spacing-md;
+      background-color: $background-light;
+      color: $text-medium;
+      border-radius: $border-radius-md;
+      font-size: 0.9rem;
+      transition: all $transition-fast;
+      
+      &:hover {
+        background-color: $background-medium;
+        color: $text-dark;
+      }
+      
+      @media (max-width: $mobile) {
+        position: static;
+        margin: $spacing-md auto 0;
+        display: inline-flex;
+      }
+    }
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  gap: $spacing-lg;
+  
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 300px;
+    
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.section {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    font-size: 1.25rem;
+    color: $text-dark;
+    border-bottom: 1px solid $background-medium;
+    
+    svg {
+      color: $primary;
+    }
+  }
+  
+  .description {
+    color: $text-medium;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.sectorsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  
+  .sectorTag {
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.certificationsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  
+  .certBadge {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    display: flex;
+    align-items: center;
+    
+    &.halal {
+      background-color: #e6f7ff;
+      color: #0070f3;
+      border: 1px solid #b3e0ff;
+    }
+    
+    &.standard {
+      background-color: #f0f2f5;
+      color: $text-dark;
+      border: 1px solid #d9d9d9;
+    }
+  }
+}
+
+.statsCard {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  
+  .statsTitle {
+    font-size: 1.1rem;
+    color: $text-dark;
+    margin: 0 0 $spacing-lg;
+    text-align: center;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $background-medium;
+  }
+  
+  .statsContent {
+    margin-bottom: $spacing-lg;
+  }
+  
+  .statItem {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md 0;
+    border-bottom: 1px solid $background-light;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .statIcon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba($primary, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+    }
+    
+    .statInfo {
+      display: flex;
+      flex-direction: column;
+      
+      .statValue {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        color: $text-dark;
+      }
+      
+      .statLabel {
+        font-size: 0.9rem;
+        color: $text-medium;
+      }
+    }
+  }
+  
+  .actionArea {
+    text-align: center;
+    
+    .matchButton {
+      display: inline-block;
+      padding: $spacing-sm $spacing-lg;
+      background-color: $primary;
+      color: white;
+      border-radius: $border-radius-md;
+      font-weight: $font-weight-medium;
+      transition: all $transition-fast;
+      
+      &:hover {
+        background-color: darken($primary, 10%);
+        transform: translateY(-2px);
+        box-shadow: $shadow-sm;
+      }
+    }
+  }
+} 

@@ -1,0 +1,142 @@
+@import 'variables.scss';
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  
+  .loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba($primary, 0.1);
+    border-radius: 50%;
+    border-top-color: $primary;
+    animation: spin 1s linear infinite;
+    margin-bottom: $spacing-md;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  p {
+    color: $text-medium;
+    font-size: 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xl;
+  
+  .backLink {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: $text-medium;
+    font-size: 0.9rem;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    color: $text-dark;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  gap: $spacing-xl;
+  
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+  
+  .formContainer {
+    flex: 1;
+  }
+  
+  .infoPanel {
+    width: 350px;
+    
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.infoPanel {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  
+  .infoHeader {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+    
+    svg {
+      color: $primary;
+    }
+    
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: $text-dark;
+    }
+  }
+  
+  .infoText {
+    color: $text-medium;
+    line-height: 1.6;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .tipBox {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    padding: $spacing-md;
+    background-color: rgba($primary, 0.05);
+    border-radius: $border-radius-md;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .tipIcon {
+      flex-shrink: 0;
+      color: $primary;
+      margin-top: 3px;
+    }
+    
+    .tipText {
+      font-size: 0.9rem;
+      color: $text-medium;
+      margin: 0;
+    }
+  }
+} 

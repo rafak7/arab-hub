@@ -1,0 +1,138 @@
+{
+  "login": {
+    "title": "Entrar",
+    "email": "E-mail",
+    "password": "Senha",
+    "submit": "Entrar",
+    "registerLink": "Não tem uma conta? Cadastre-se",
+    "forgotPassword": "Esqueceu sua senha?"
+  },
+  "register": {
+    "title": "Cadastro",
+    "name": "Nome completo",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "submit": "Cadastrar",
+    "loginLink": "Já tem uma conta? Entre aqui"
+  },
+  "companyRegister": {
+    "title": "Cadastro da Empresa",
+    "companyName": "Nome da empresa",
+    "country": "País",
+    "type": "Tipo de empresa",
+    "importer": "Importadora",
+    "exporter": "Exportadora",
+    "both": "Ambos",
+    "sectors": "Setores de atuação",
+    "certifications": "Certificações",
+    "halal": "Halal",
+    "iso": "ISO",
+    "other": "Outros",
+    "submit": "Finalizar cadastro"
+  },
+  "match": {
+    "title": "Matchmaking",
+    "filter": "Filtrar",
+    "country": "País",
+    "sector": "Setor",
+    "type": "Tipo",
+    "connect": "Conectar",
+    "viewProfile": "Ver perfil",
+    "noMatches": "Nenhuma empresa encontrada",
+    "needCompany": "Você precisa cadastrar sua empresa para ver matches",
+    "registerToFind": "Cadastre sua empresa para encontrar parceiros de negócios compatíveis.",
+    "registerCompany": "Cadastrar Empresa",
+    "infoTooltip": "Informações sobre o cálculo de match",
+    "howWeCalculate": "Como calculamos o score de match?",
+    "factorsDescription": "O score de match é calculado considerando diversos fatores:",
+    "factors": {
+      "typeCompatibility": "Compatibilidade de tipo (30%):",
+      "typeDescription": "Exportadores são combinados com importadores",
+      "sectorMatch": "Setores em comum (25%):",
+      "sectorDescription": "Empresas no mesmo setor têm maior compatibilidade",
+      "certifications": "Certificações em comum (15%):",
+      "certificationsDescription": "Certificações compatíveis aumentam o score",
+      "geography": "Geografia (20%):",
+      "geographyDescription": "Conexões Brasil-Mundo Árabe são priorizadas",
+      "specialCombinations": "Combinações especiais (10%):",
+      "specialDescription": "Alguns matches específicos recebem pontos extras"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "connections": "Conexões",
+    "views": "Visualizações do perfil",
+    "suggestions": "Sugestões",
+    "viewAll": "Ver todos",
+    "registerCompany": "Cadastre sua empresa",
+    "registerCompanyDescription": "Para encontrar parceiros de negócios e receber sugestões de conexões, você precisa cadastrar sua empresa primeiro.",
+    "registerCompanyButton": "Cadastrar empresa",
+    "welcomeMessage": "Bem-vindo ao Arab-Brazil Business Hub. Encontre parceiros de negócios e explore conexões entre empresas do Brasil e do mundo árabe.",
+    "myCompany": "Minha Empresa",
+    "viewFullProfile": "Ver Perfil Completo",
+    "noConnectionsYet": "Nenhuma conexão ainda",
+    "noSuggestionsAvailable": "Nenhuma sugestão disponível",
+    "suggestionsExplanation": "Sugestões baseadas no perfil da sua empresa e algoritmo de match inteligente",
+    "sector": "Setor",
+    "halalCertification": "Certificação Halal",
+    "certification": "Certificação",
+    "businessOpportunity": "Oportunidade de negócio",
+    "editProfile": "Editar Perfil",
+    "sectorsTitle": "Setores de Atuação",
+    "certificationsTitle": "Principais Certificações",
+    "companyLogoAlt": "Logo de {{name}}"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "match": "Matchmaking",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "logout": "Sair",
+    "registerCompany": "Cadastrar Empresa",
+    "registerCompanyTooltip": "Cadastre sua empresa para acessar todas as funcionalidades",
+    "important": "Importante",
+    "registerCompanyBannerText": "Para encontrar parceiros de negócios, você precisa cadastrar sua empresa",
+    "registerNow": "Cadastrar agora"
+  },
+  "language": {
+    "pt": "Português",
+    "en": "Inglês",
+    "ar": "Árabe"
+  },
+  "sectors": {
+    "agriculture": "Agricultura",
+    "food": "Alimentos e Bebidas",
+    "textile": "Têxtil",
+    "technology": "Tecnologia",
+    "construction": "Construção",
+    "manufacturing": "Manufatura",
+    "healthcare": "Saúde",
+    "energy": "Energia",
+    "tourism": "Turismo"
+  },
+  "countries": {
+    "BR": "Brasil",
+    "SA": "Arábia Saudita",
+    "AE": "Emirados Árabes Unidos",
+    "QA": "Catar",
+    "KW": "Kuwait",
+    "BH": "Barein",
+    "OM": "Omã",
+    "EG": "Egito",
+    "JO": "Jordânia",
+    "LB": "Líbano"
+  },
+  "common": {
+    "close": "Fechar",
+    "loading": "Carregando...",
+    "more": "mais"
+  },
+  "footer": {
+    "about": "Sobre",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso",
+    "rights": "Todos os direitos reservados."
+  }
+}

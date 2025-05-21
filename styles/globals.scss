@@ -1,0 +1,235 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Tajawal:wght@300;400;500;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $text-dark;
+  background-color: $background-medium;
+  line-height: 1.5;
+  overflow-x: hidden;
+
+  &.rtl {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: 2rem;
+  
+  @media (min-width: $tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  
+  @media (min-width: $tablet) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+button, 
+.button {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  background-color: $primary;
+  color: $text-light;
+  border: none;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: background-color $transition-fast, transform $transition-fast;
+  
+  &:hover {
+    background-color: $primary-light;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    background-color: $background-dark;
+    color: $text-medium;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  &.secondary {
+    background-color: $secondary;
+    
+    &:hover {
+      background-color: $secondary-light;
+    }
+  }
+  
+  &.outline {
+    background-color: transparent;
+    border: 1px solid $primary;
+    color: $primary;
+    
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+    
+    &.secondary {
+      border-color: $secondary;
+      color: $secondary;
+      
+      &:hover {
+        background-color: rgba($secondary, 0.1);
+      }
+    }
+  }
+}
+
+input, 
+select, 
+textarea {
+  display: block;
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $background-dark;
+  border-radius: $border-radius-md;
+  background-color: $background-light;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color $transition-fast;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
+  
+  &:disabled {
+    background-color: $background-medium;
+    cursor: not-allowed;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-medium;
+}
+
+.form-group {
+  margin-bottom: $spacing-lg;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @media (min-width: $tablet) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+.card {
+  background-color: $background-light;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: $spacing-lg;
+}
+
+.flex {
+  display: flex;
+  
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &.space-between {
+    justify-content: space-between;
+  }
+}
+
+.my-1 { margin-top: $spacing-sm; margin-bottom: $spacing-sm; }
+.my-2 { margin-top: $spacing-md; margin-bottom: $spacing-md; }
+.my-3 { margin-top: $spacing-lg; margin-bottom: $spacing-lg; }
+.my-4 { margin-top: $spacing-xl; margin-bottom: $spacing-xl; }
+
+.mx-1 { margin-left: $spacing-sm; margin-right: $spacing-sm; }
+.mx-2 { margin-left: $spacing-md; margin-right: $spacing-md; }
+.mx-3 { margin-left: $spacing-lg; margin-right: $spacing-lg; }
+.mx-4 { margin-left: $spacing-xl; margin-right: $spacing-xl; }
+
+.py-1 { padding-top: $spacing-sm; padding-bottom: $spacing-sm; }
+.py-2 { padding-top: $spacing-md; padding-bottom: $spacing-md; }
+.py-3 { padding-top: $spacing-lg; padding-bottom: $spacing-lg; }
+.py-4 { padding-top: $spacing-xl; padding-bottom: $spacing-xl; }
+
+.px-1 { padding-left: $spacing-sm; padding-right: $spacing-sm; }
+.px-2 { padding-left: $spacing-md; padding-right: $spacing-md; }
+.px-3 { padding-left: $spacing-lg; padding-right: $spacing-lg; }
+.px-4 { padding-left: $spacing-xl; padding-right: $spacing-xl; }

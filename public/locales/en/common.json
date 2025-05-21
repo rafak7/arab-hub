@@ -1,0 +1,138 @@
+{
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "registerLink": "Don't have an account? Register",
+    "forgotPassword": "Forgot your password?"
+  },
+  "register": {
+    "title": "Register",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "submit": "Register",
+    "loginLink": "Already have an account? Sign in"
+  },
+  "companyRegister": {
+    "title": "Company Registration",
+    "companyName": "Company name",
+    "country": "Country",
+    "type": "Company type",
+    "importer": "Importer",
+    "exporter": "Exporter",
+    "both": "Both",
+    "sectors": "Business sectors",
+    "certifications": "Certifications",
+    "halal": "Halal",
+    "iso": "ISO",
+    "other": "Other",
+    "submit": "Complete registration"
+  },
+  "match": {
+    "title": "Matchmaking",
+    "filter": "Filter",
+    "country": "Country",
+    "sector": "Sector",
+    "type": "Type",
+    "connect": "Connect",
+    "viewProfile": "View profile",
+    "noMatches": "No companies found",
+    "needCompany": "You need to register your company to see matches",
+    "registerToFind": "Register your company to find compatible business partners.",
+    "registerCompany": "Register Company",
+    "infoTooltip": "Information about match calculation",
+    "howWeCalculate": "How do we calculate the match score?",
+    "factorsDescription": "The match score is calculated considering several factors:",
+    "factors": {
+      "typeCompatibility": "Type compatibility (30%):",
+      "typeDescription": "Exporters are matched with importers",
+      "sectorMatch": "Common sectors (25%):",
+      "sectorDescription": "Companies in the same sector have higher compatibility",
+      "certifications": "Common certifications (15%):",
+      "certificationsDescription": "Compatible certifications increase the score",
+      "geography": "Geography (20%):",
+      "geographyDescription": "Brazil-Arab World connections are prioritized",
+      "specialCombinations": "Special combinations (10%):",
+      "specialDescription": "Some specific matches receive extra points"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "connections": "Connections",
+    "views": "Profile views",
+    "suggestions": "Suggestions",
+    "viewAll": "View all",
+    "registerCompany": "Register your company",
+    "registerCompanyDescription": "To find business partners and receive matching suggestions, you need to register your company first.",
+    "registerCompanyButton": "Register company",
+    "welcomeMessage": "Welcome to Arab-Brazil Business Hub. Find business partners and explore connections between companies from Brazil and the Arab world.",
+    "myCompany": "My Company",
+    "viewFullProfile": "View Full Profile",
+    "noConnectionsYet": "No connections yet",
+    "noSuggestionsAvailable": "No suggestions available",
+    "suggestionsExplanation": "Suggestions based on your company profile and intelligent matching algorithm",
+    "sector": "Sector",
+    "halalCertification": "Halal Certification",
+    "certification": "Certification",
+    "businessOpportunity": "Business opportunity",
+    "editProfile": "Edit Profile",
+    "sectorsTitle": "Business Sectors",
+    "certificationsTitle": "Main Certifications",
+    "companyLogoAlt": "{{name}} logo"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "match": "Matchmaking",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "registerCompany": "Register Company",
+    "registerCompanyTooltip": "Register your company to access all features",
+    "important": "Important",
+    "registerCompanyBannerText": "To find business partners, you need to register your company",
+    "registerNow": "Register now"
+  },
+  "language": {
+    "pt": "Portuguese",
+    "en": "English",
+    "ar": "Arabic"
+  },
+  "sectors": {
+    "agriculture": "Agriculture",
+    "food": "Food & Beverage",
+    "textile": "Textile",
+    "technology": "Technology",
+    "construction": "Construction",
+    "manufacturing": "Manufacturing",
+    "healthcare": "Healthcare",
+    "energy": "Energy",
+    "tourism": "Tourism"
+  },
+  "countries": {
+    "BR": "Brazil",
+    "SA": "Saudi Arabia",
+    "AE": "United Arab Emirates",
+    "QA": "Qatar",
+    "KW": "Kuwait",
+    "BH": "Bahrain",
+    "OM": "Oman",
+    "EG": "Egypt",
+    "JO": "Jordan",
+    "LB": "Lebanon"
+  },
+  "common": {
+    "close": "Close",
+    "loading": "Loading...",
+    "more": "more"
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  }
+}
